@@ -1,4 +1,4 @@
-$names = Get-content "\\tsclient\C\Users\awiegel\Computers.txt"
+$names = Get-content "\Location\Of\CSV\List"
 
 foreach ($name in $names){
 if (Test-Connection -ComputerName $name -Count 1 -ErrorAction SilentlyContinue){
@@ -7,6 +7,6 @@ if (Test-Connection -ComputerName $name -Count 1 -ErrorAction SilentlyContinue){
 }
 else{
     Write-Host "$name,down"|
-    Export-CSV "C:\Users\admin.awiegel\Desktop\DOWN.csv" -append
+    Export-CSV "\Location\To\Save" -append
 }
 }
